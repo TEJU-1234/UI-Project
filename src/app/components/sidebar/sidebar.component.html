@@ -1,0 +1,31 @@
+<div 
+  class="sidebar"
+  [class.collapsed]="isCollapsed"
+  [class.mobile-open]="isMobileOpen"
+  (click)="closeMobile()"
+>
+  <button class="toggle-btn" (click)="toggleSidebar(); $event.stopPropagation()">
+    <span class="material-icons">
+      {{ (isCollapsed || !isMobileOpen) ? 'menu' : 'menu_open' }}
+    </span>
+  </button>
+
+  <ul class="nav-links">
+    <li>
+      <span class="material-icons">dashboard</span>
+      <span *ngIf="!isCollapsed">Dashboard</span>
+    </li>
+    <li>
+      <span class="material-icons">group</span>
+      <span *ngIf="!isCollapsed">Employees</span>
+    </li>
+    <li>
+      <span class="material-icons">assignment</span>
+      <span *ngIf="!isCollapsed">Projects</span>
+    </li>
+    <li>
+      <span class="material-icons">settings</span>
+      <span *ngIf="!isCollapsed">Settings</span>
+    </li>
+  </ul>
+</div>

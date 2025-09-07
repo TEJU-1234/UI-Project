@@ -1,0 +1,29 @@
+<nav class="navbar">
+  <div class="navbar-search">
+    <input
+      type="text"
+      placeholder="Search..."
+      #searchInput
+      (keyup.enter)="onSearch(searchInput.value)"
+    />
+    <span class="material-icons">search</span>
+  </div>
+
+  <div class="navbar-right">
+    <div class="navbar-icon">
+      <span class="material-icons">notifications</span>
+      <span class="badge" *ngIf="notifications > 0">{{ notifications }}</span>
+    </div>
+
+    <div class="navbar-user">
+      <span class="material-icons">account_circle</span>
+      <div class="dropdown">
+        <button class="dropdown-toggle">{{ userName }}</button>
+        <div class="dropdown-menu">
+          <a href="#">Profile</a>
+          <a href="#" (click)="logout()">Logout</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>

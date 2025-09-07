@@ -1,0 +1,46 @@
+<div class="dashboard">
+  <div class="stats">
+    <div class="card" *ngFor="let stat of stats">
+      <h3>{{ stat.value }}</h3>
+      <p>{{ stat.label }}</p>
+    </div>
+  </div>
+
+  <div class="activity">
+    <h4>Recent Activity</h4>
+    <ul>
+      <li *ngFor="let activity of activities">{{ activity }}</li>
+    </ul>
+  </div>
+
+  <div class="performance">
+    <h4>Performance</h4>
+    <div *ngFor="let perf of performance" class="progress-wrapper">
+      <span>{{ perf.quarter }}</span>
+      <div class="progress-bar">
+        <div class="progress-fill" [style.width.%]="perf.value"></div>
+      </div>
+      <span class="value">{{ perf.value }}%</span>
+    </div>
+  </div>
+
+  <div class="employee-table">
+    <h4>Employees</h4>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Role</th>
+          <th>Department</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let emp of employees">
+          <td>{{ emp.name }}</td>
+          <td>{{ emp.role }}</td>
+          <td>{{ emp.department }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
