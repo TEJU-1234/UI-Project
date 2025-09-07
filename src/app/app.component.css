@@ -19,7 +19,7 @@ app-footer {
 }
 
 app-sidebar {
-  flex: 0 0 220px;
+  flex: 0 0 60px;
 
   &.collapsed {
     flex: 0 0 60px;
